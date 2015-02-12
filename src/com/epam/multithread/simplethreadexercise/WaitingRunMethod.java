@@ -13,6 +13,5 @@ public class WaitingRunMethod {
 		} finally {
 			System.out.println("WaitingRunMethod ended.");
 		}
-
 	}
 }
