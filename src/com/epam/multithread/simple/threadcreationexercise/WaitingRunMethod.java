@@ -1,4 +1,4 @@
-package com.epam.multithread.simplethreadexercise;
+package com.epam.multithread.simple.threadcreationexercise;
 
 public class WaitingRunMethod implements Runnable {
 	private final static int WAIT_TIME = 1000;

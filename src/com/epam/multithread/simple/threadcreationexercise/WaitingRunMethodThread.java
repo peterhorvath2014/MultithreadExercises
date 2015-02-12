@@ -1,4 +1,4 @@
-package com.epam.multithread.simplethreadexercise;
+package com.epam.multithread.simple.threadcreationexercise;
 
 public class WaitingRunMethodThread extends Thread {
 	private WaitingRunMethod wrm;
