@@ -1,6 +1,6 @@
 package com.epam.multithread.simplethreadexercise;
 
-public class WaitingRunMethod {
+public class WaitingRunMethod implements Runnable {
 	private final static int WAIT_TIME = 1000;
 
 	public void run() {
