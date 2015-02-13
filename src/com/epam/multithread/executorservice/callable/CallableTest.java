@@ -11,17 +11,19 @@ import com.epam.multithread.common.Util;
 public class CallableTest {
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		ExecutorService es = Executors.newCachedThreadPool();
-		Future<String> f1 = es.submit(new ImplementsCallable("1st thread"));
+		es.execute(new ImplementsRunnable("1st thread"));
+		es.execute(new ImplementsRunnable("2nd thread"));
+		es.execute(new ImplementsRunnable("3rd thread"));
 		Future<String> f2 = es.submit(new ImplementsCallable("2nd thread"));
 		Future<String> f3 = es.submit(new ImplementsCallable("3rd thread"));
 		es.shutdown();
 		
-		while (!f1.isDone() || !f2.isDone() || !f3.isDone()) {
+		while (!f2.isDone() || !f3.isDone()) {
 			System.out.print(".");
 			Util.sleep();
 		}
+		Util.sleep();
 		System.out.println();
-		System.out.println(f1.get());
 		System.out.println(f2.get());
 		System.out.println(f3.get());
 		

@@ -1,21 +1,17 @@
 package com.epam.multithread.executorservice.callable;
 
-import java.util.concurrent.Callable;
-
 import com.epam.multithread.common.Util;
 
-public class ImplementsCallable implements Callable<String> {
+public class ImplementsRunnable implements Runnable {
 	private String threadName;
 	
-	public ImplementsCallable(String threadName) {
+	public ImplementsRunnable(String threadName) {
 		this.threadName = threadName;
 	}
 
-	public String call() throws Exception {
-		
+	public void run() {
 		Util.sleep(2000);
 		throw new RuntimeException(threadName + " I'm coming!!");
-		//return new String(threadName);
 	}
 
 }
