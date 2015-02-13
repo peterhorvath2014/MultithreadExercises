@@ -6,11 +6,12 @@ public class ExchangerSample {
 	private static final class ExchangerRunnable implements Runnable {
 		private Exchanger exchanger;
 		private Object object;
-		
+
 		public ExchangerRunnable(Exchanger exchanger, Object object) {
 			this.exchanger = exchanger;
 			this.object = object;
 		}
+
 		public void run() {
 			Object prev = this.object;
 			try {
@@ -24,9 +25,13 @@ public class ExchangerSample {
 
 	public static void main(String[] args) {
 		Exchanger exch = new Exchanger();
-		
+
 		new Thread(new ExchangerRunnable(exch, "A")).start();
 		new Thread(new ExchangerRunnable(exch, "B")).start();
-		
+		new Thread(new ExchangerRunnable(exch, "C")).start();
+		new Thread(new ExchangerRunnable(exch, "D")).start();
+		new Thread(new ExchangerRunnable(exch, "E")).start();
+		new Thread(new ExchangerRunnable(exch, "F")).start();
+
 	}
 }
