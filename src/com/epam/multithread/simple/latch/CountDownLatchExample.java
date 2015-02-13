@@ -1,4 +1,4 @@
-package com.epam.multithread.simple.Latch;
+package com.epam.multithread.simple.latch;
 
 import java.util.concurrent.CountDownLatch;
 
